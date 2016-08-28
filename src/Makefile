@@ -9,11 +9,11 @@ CC = clang
 			-I"$(MINGW_PATH)/lib/gcc/mingw32/4.5.2/include/c++/backward" \
 			-I"$(MINGW_PATH)/lib/gcc/mingw32/4.5.2/include/c++/mingw32" \
 			-I"$(MINGW_PATH)/lib/gcc/mingw32/4.5.2/include-fixed"
-#LINKPARAM = -lpthread -lncurses
-CFLAGS = -O -Wall -Wno-invalid-source-encoding
+LINKPARAM = -lpthread -lncurses
+CFLAGS = -O -Wall -Werror
 #ARG = 1
 #EXEC_PREFIX = cmd /c
-RM_FLAGS = -I
+#RM_FLAGS = -I
 
 : $(PROGRAM)
 
