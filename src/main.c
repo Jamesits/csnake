@@ -4,6 +4,7 @@
 
 int main(void)
 {
+	setlocale(LC_ALL, "");
 	init_screen();
 	game_loop();
 	end_screen();
