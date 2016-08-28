@@ -43,7 +43,7 @@ void game_loop()
 	}
 
 	/* draw a border */
-	box(stdscr, L'😊', L'█');
+	box(stdscr, L'█', L'█');
 
 	/* read keyboard action on thread 0 */
 	while(running)
