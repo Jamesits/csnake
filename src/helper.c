@@ -32,9 +32,12 @@ void unset_resize_event_handler()
 }
 
 void update_screen_metrics(){
-	column = COLS;
-	row = LINES;
-	printw("%d, %d ", column, row);
+	struct winsize ws = {0, 0, 0, 0};
+    if ( ioctl(0, TIOCGWINSZ, &ws) >= 0 ) {
+    	row = ws.ws_row;
+		column = ws.ws_col;
+		printw("%d, %d ", column, row);
+    }
 }
 
 void *flush_screen_buffer(void *param)
